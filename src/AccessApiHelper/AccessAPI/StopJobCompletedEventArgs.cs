@@ -1,0 +1,28 @@
+using System;
+using System.CodeDom.Compiler;
+using System.ComponentModel;
+using System.Diagnostics;
+
+namespace CrownPeak.AccessAPI
+{
+	[DebuggerStepThrough]
+	[GeneratedCode("System.ServiceModel", "4.0.0.0")]
+	public class StopJobCompletedEventArgs : AsyncCompletedEventArgs
+	{
+		private object[] results;
+
+		public WSResultClass Result
+		{
+			get
+			{
+				base.RaiseExceptionIfNecessary();
+				return (WSResultClass)this.results[0];
+			}
+		}
+
+		public StopJobCompletedEventArgs(object[] results, Exception exception, bool cancelled, object userState) : base(exception, cancelled, userState)
+		{
+			this.results = results;
+		}
+	}
+}
